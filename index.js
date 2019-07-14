@@ -2,6 +2,21 @@
 
 console.log('Check one');
 
+// Users Input held here.
+let oldPassword = [];
+
+// Programs Final Password sent here to display to the user.
+let newPassword = [];
+
+// Arrays of alternatives for Letters.
+// const a = {
+//   lowercase: 'a',
+//   uppercase: 'A',
+//   alt: '@',
+//   number: '4',
+//   phonetic: 'alpha'
+// }
+
 const a = ['a', 'A', '@', '4', 'alpha'];
 const b = ['b', 'B', '8', 'bravo'];
 const c = ['c', 'C', '(', 'charlie'];
@@ -39,6 +54,7 @@ const nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
 const spChars = ['!', '@', '#', '$', '%', '&', '(', ')', '*', '+', '-', '/', '\\', '\'', ',', '.', ':', ';', '<', '=', '>', '?', '[', ']', '^', '_', '{', '|', '}', '~', '`' ];
 
+//This is the Master function to return the new password.
 function remix(string){
 
   let breakaway = string.split('');
@@ -67,13 +83,46 @@ function remix(string){
 
 }
 
+// This Scrambles the letters up to return something unique.
 function scrambleLetters(str){
 
   let breakaway = str.split('');
   console.log(breakaway);
 
+  // Compare breakaway array to alphabet array, and come up with a new array of all the alphabet arrays. For now...
   for(let i = 0; i < breakaway.length; i++){
-
+    console.log(breakaway[i] + alphabet);
   }
 
 }
+
+// This adds Special Chars to the Password, if needed.
+function addSpChar(num){
+  let spCharHold = []
+  for(let i = 0; i < num; i++){
+    spCharHold.push(spChars[(Math.round(Math.random() * 31))]);
+  }
+  console.log(spCharHold);
+}
+
+// This adds Numbers to the Password, if needed.
+function addNums(num){
+  let numHold = []
+  for(let i = 0; i < num; i++){
+    numHold.push(nums[(Math.round(Math.random() * 9))]);
+  }
+  console.log(numHold);
+}
+
+let compareLetter = alphabet.filter(function(letter){
+  return letter.lowercase == letter;
+})
+
+
+
+// var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter(word => word.length > 6);
+
+// console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
