@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "An app to fix crappy passwords",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
   "devDependencies": {
-    "eslint": "^6.0.1"
+    "eslint": "^6.0.1",
+    "expect": "^24.9.0",
+    "mocha": "^7.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "mocha",
+    "build": "webpack ."
   },
   "repository": {
     "type": "git",

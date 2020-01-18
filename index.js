@@ -1,20 +1,10 @@
 'use strict';
 
-console.log('index linked');
+const logic = require('./src/logic.js');
 
-function verifyPW(str){
-
-  let arr = str.split('');
-
-  let verifyArr = [ 0, 0, 0, 0 ];
-
-  let lc = [ 'a', 'b', 'c'];
-  let uc = [ 'A', 'B', 'C'];
-  let sc = [ '!', '@', '#'];
-  let nu = [ '1', '2', '3'];
-
-  console.log(arr);
-
-  console.log(verifyArr);
-  
-}
+console.log(logic.verifyPW(8));
+console.log(logic.verifyPIN(4));
+console.log(logic.inputStr('Balls'));
+console.log(logic.inputStr(12));
+console.log(logic.inputStr(true));
+console.log(logic.inputStr({ fight: 'right' }));
