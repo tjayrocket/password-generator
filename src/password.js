@@ -1,6 +1,5 @@
 'use strict';
 
-
 const a = ['a', 'A'];
 const b = ['b', 'B'];
 const c = ['c', 'C'];
@@ -38,68 +37,26 @@ const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 const spChars = ['!', '@', '#', '$', '%', '&', '(', ')', '*', '+', '-', '/', '\\', '\'', ',', '.', ':', ';', '<', '=', '>', '?', '[', ']', '^', '_', '{', '|', '}', '~', '`' ];
 
-//Function to split and check password
-
-// let verifyPW = function(str){
-//   let arr = str.split('');
-//   console.log(arr);
-// };
-
 let passwordContainer = [];
 let passwordReturn = [];
-
-let pinContainer = [];
-
-let inputStr = function(str){
-  if(typeof str === 'string'){
-    console.log('yep.');
-  } else {
-    console.log('nope');
-  }
-};
-
 
 let passPoint = function(){
   return Math.round(Math.random()*25);
 };
 
-let pinPoint = function(){
-  return Math.round(Math.random()*9);
-};
-
-
-
 let verifyPW = function(num){
-
-  passwordContainer = [];
-
-  console.log(num);
-
-  for(let i = 0; i < num; i++){
-    passwordContainer.push(alphabet[passPoint()]);
+  if(typeof num !== 'number'){
+    return false;
+  } else{
+    passwordContainer = [];
+    for(let i = 0; i < num; i++){
+      passwordContainer.push(alphabet[passPoint()]);
+    }
+    for(let j = 0; j < passwordContainer.length; j++){
+      passwordReturn.push(passwordContainer[j][Math.round(Math.random())]);
+    }
+    return passwordReturn;
   }
-
-  for(let j = 0; j < passwordContainer.length; j++){
-    passwordReturn.push(passwordContainer[j][Math.round(Math.random())]);
-  }
-
-  console.log(passwordContainer);
-  console.log(passwordReturn);
 };
 
-
-
-let verifyPIN = function(num){
-
-  pinContainer = [];
-
-  console.log(num);
-
-  for(let i = 0; i < num; i++){
-    pinContainer.push(nums[pinPoint()]);
-  }
-
-  console.log(pinContainer);
-};
-
-module.exports = { verifyPW, verifyPIN, inputStr };
+module.exports = { verifyPW };
