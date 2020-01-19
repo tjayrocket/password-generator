@@ -44,6 +44,9 @@ let passPoint = function(){
   return Math.round(Math.random()*25);
 };
 
+//User inputs a string - verify it is a string.
+
+//User puts in a numeric value
 let verifyPW = function(num){
   if(typeof num !== 'number'){
     return false;
@@ -59,4 +62,8 @@ let verifyPW = function(num){
   }
 };
 
-module.exports = { verifyPW };
+let remixPW = function(str){
+  console.log(str);
+}
+
+module.exports = { verifyPW, remixPW };
